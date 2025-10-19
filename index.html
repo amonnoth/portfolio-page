@@ -6,19 +6,20 @@
   <title>Amon Noth | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="home-body">
+<body>
+  <!-- Navbar -->
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="index.html">AN</a>
 
-      <button class="nav-toggle" aria-label="Menü umschalten">
+      <button class="nav-toggle" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
 
       <div class="nav-links">
-        <a href="index.html" data-nav="home" class="nav-link">Startseite</a>
-        <a href="ausbildung.html" data-nav="edu" class="nav-link">Ausbildung</a>
-        <a href="sport.html" data-nav="sport" class="nav-link">Sport</a>
+        <a href="index.html" class="nav-link" data-nav="home">Startseite</a>
+        <a href="ausbildung.html" class="nav-link" data-nav="edu">Ausbildung</a>
+        <a href="sport.html" class="nav-link" data-nav="sport">Sport</a>
       </div>
     </nav>
   </header>
@@ -26,17 +27,20 @@
   <main class="container">
     <!-- Hero -->
     <section class="hero card hero-grid">
-      <div class="hero-text">
+      <div>
         <h1>Hi, ich bin <span class="grad">Amon Noth</span> 👋</h1>
         <p class="lead">
-          Student, Läufer und Tech-Enthusiast. Ich baue saubere Web-UIs,
+          Student, Läufer & Tech-Enthusiast. Ich baue saubere Web-UIs,
           trainiere für Langdistanz-Wettkämpfe und liebe Daten, die etwas erzählen.
         </p>
 
         <div class="cta-row">
           <a class="btn btn-primary" target="_blank" rel="noreferrer"
-             href="https://www.linkedin.com/in/amon-noth-a4a91122b/">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.84-2.05 3.8-2.05 4.06 0 4.8 2.67 4.8 6.14V23h-4v-6.6c0-1.57-.03-3.58-2.18-3.58-2.18 0-2.51 1.7-2.51 3.46V23h-3.96V8z"/></svg>
+             href="https://www.linkedin.com/in/DEIN-LINKEDIN-HANDLE">
+            <!-- LinkedIn Icon -->
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+              <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.84-2.05 3.8-2.05 4.06 0 4.8 2.67 4.8 6.14V23h-4v-6.6c0-1.57-.03-3.58-2.18-3.58-2.18 0-2.51 1.7-2.51 3.46V23h-3.96V8z"/>
+            </svg>
             LinkedIn
           </a>
           <a class="btn" href="sport.html">Zu den Läufen</a>
@@ -44,28 +48,26 @@
       </div>
 
       <div class="hero-photo">
-        <!-- Lege dein Bild unter /assets/profil.jpg ab -->
-        <img src="assets/profil.jpg" alt="Amon Noth" />
+        <!-- Lege dein Foto unter assets/profil.jpg ab -->
+        <img src="assets/profil.jpg" alt="Amon Noth">
       </div>
     </section>
 
-    <!-- Kurz-Highlights -->
+    <!-- Highlights -->
     <section class="grid-3">
-      <div class="card mini">
+      <article class="card mini">
         <h3>Über mich</h3>
-        <p>24 Jahre, neugierig auf Code, Produkt & Performance. Ich kombiniere
-           Studium, Sport und Projekte mit Fokus auf Klarheit & Wirkung.</p>
-      </div>
-      <div class="card mini">
+        <p>Neugierig auf Code, Produkt & Performance. Ich kombiniere Studium, Sport und Projekte
+           mit Fokus auf Klarheit & Wirkung.</p>
+      </article>
+      <article class="card mini">
         <h3>Aktuell</h3>
-        <p>Portfolio-Seite mit GitHub Pages · Strava-Integration ·
-           Ziele 2025: Marathon PB & solide Full-Stack-Basis.</p>
-      </div>
-      <div class="card mini">
+        <p>Portfolio mit GitHub Pages, Strava-Integration, Ziele 2025: Marathon-PB & solide Full-Stack-Basis.</p>
+      </article>
+      <article class="card mini">
         <h3>Skills</h3>
-        <p>HTML/CSS/JS · Git/GitHub · Basics in Webarchitektur ·
-           Fable für Datenvisualisierung & Automatisierung.</p>
-      </div>
+        <p>HTML/CSS/JS · Git/GitHub · Web-Architektur-Basics · Interesse an Data-Viz & Automation.</p>
+      </article>
     </section>
   </main>
 

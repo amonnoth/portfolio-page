@@ -128,7 +128,7 @@ if (onSportPage()){
     bootSport();
   }
 }
-// ----- Navbar: active Link + mobile toggle + shadow on scroll -----
+// Navbar: active Link, mobile Toggle, Header-Shadow, Footer-Jahr
 function setActiveNav(){
   const p = location.pathname;
   document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
@@ -149,7 +149,6 @@ function initNav(){
     if (window.scrollY > 6) document.body.classList.add('scrolled');
     else document.body.classList.remove('scrolled');
   });
-  // Jahr im Footer
   const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 }
 if (document.readyState === 'loading') {
