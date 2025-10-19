@@ -1,16 +1,20 @@
-document.getElementById("myButton").addEventListener("click", function () {
-  alert("Hello World");
-});
+// ============================================
+// Strava Daten laden und auf Sport-Seite anzeigen
+// ============================================
 
 async function renderStravaRuns() {
   const container = document.getElementById('strava-container');
+  if (!container) return; // Wenn wir nicht auf sport.html sind, abbrechen
 
   try {
-    // Strava-Daten abrufen
-    const res = await fetch('data/strava.json', { cache: 'no-store' });
+    // JSON-Datei mit Strava-Daten abrufen (vom GitHub Pages Pfad)
+    const res = await fetch('/portfolio-page/data/strava.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    
+    // JSON-Inhalt lesen
     const { runs } = await res.json();
 
+    // Keine Läufe vorhanden?
     if (!runs || runs.length === 0) {
       container.innerHTML = '<p>Keine Läufe gefunden.</p>';
       return;
@@ -19,9 +23,7 @@ async function renderStravaRuns() {
     // Nur die letzten 10 Läufe anzeigen
     const items = runs.slice(0, 10).map(run => {
       const date = new Date(run.date).toLocaleDateString('de-CH');
-      const pace = run.pace_min_per_km
-        ? `${run.pace_min_per_km} min/km`
-        : '-';
+      const pace = run.pace_min_per_km ? `${run.pace_min_per_km} min/km` : '-';
       return `
         <div class="run">
           <h3>${run.name}</h3>
@@ -32,6 +34,7 @@ async function renderStravaRuns() {
       `;
     }).join('');
 
+    // HTML einfügen
     container.innerHTML = items;
 
   } catch (err) {
@@ -40,11 +43,10 @@ async function renderStravaRuns() {
   }
 }
 
-// Funktion beim Laden der Seite ausführen
-document.addEventListener('DOMContentLoaded', renderStravaRuns);
-
-
-// Läufe nur laden, wenn die Seite sport.html ist
-if (window.location.pathname.includes('sport.html')) {
+// ============================================
+// Nur auf der Sport-Seite aktivieren
+// ============================================
+if (location.pathname.endsWith('/sport.html') || location.pathname.endsWith('sport.html')) {
   document.addEventListener('DOMContentLoaded', renderStravaRuns);
 }
+
