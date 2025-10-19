@@ -32,18 +32,25 @@ async function main() {
   if (!actsRes.ok) throw new Error(`Activities fetch failed: ${actsRes.status} ${await actsRes.text()}`);
   const acts = await actsRes.json();
 
-  // 3) Nur Läufe mappen (leichtgewichtiges JSON)
+    // 3) Nur Läufe mappen (mit Sekunden für exakte Pace/Dauer)
   const runs = acts
     .filter(a => a.type === "Run")
-    .map(a => ({
-      id: a.id,
-      name: a.name,
-      date: a.start_date_local,                   // lokale Startzeit
-      distance_km: +(a.distance / 1000).toFixed(2),
-      moving_time_min: Math.round(a.moving_time / 60),
-      pace_min_per_km: a.moving_time ? ((a.moving_time / 60) / (a.distance / 1000)).toFixed(2) : null,
-      elevation_gain_m: a.total_elevation_gain
-    }));
+    .map(a => {
+      const distanceKm = a.distance / 1000;
+      const movingSec = a.moving_time; // Sekunden
+      const paceSecPerKm = distanceKm > 0 ? Math.round(movingSec / distanceKm) : null;
+
+      return {
+        id: a.id,
+        name: a.name,
+        date: a.start_date_local,
+        distance_km: +distanceKm.toFixed(2),
+        moving_time_s: movingSec,                 // <-- NEU: Sekunden
+        pace_sec_per_km: paceSecPerKm,            // <-- NEU: Sekunden pro km (mm:ss)
+        elevation_gain_m: a.total_elevation_gain
+      };
+    });
+
 
   // 4) JSON schreiben
   await fs.mkdir("data", { recursive: true });

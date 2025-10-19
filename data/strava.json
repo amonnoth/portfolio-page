@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2025-10-19T13:23:19.077Z",
+  "updatedAt": "2025-10-19T14:17:18.662Z",
   "runs": [
     {
       "id": 16167692110,
       "name": "Lauf am Morgen",
       "date": "2025-10-17T09:48:05Z",
       "distance_km": 15.27,
-      "moving_time_min": 68,
-      "pace_min_per_km": "4.43",
+      "moving_time_s": 4055,
+      "pace_sec_per_km": 266,
       "elevation_gain_m": 152.3
     },
     {
@@ -15,8 +15,8 @@
       "name": "Abendlauf",
       "date": "2025-10-15T19:27:34Z",
       "distance_km": 10.13,
-      "moving_time_min": 52,
-      "pace_min_per_km": "5.14",
+      "moving_time_s": 3126,
+      "pace_sec_per_km": 308,
       "elevation_gain_m": 48.3
     },
     {
@@ -24,8 +24,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-10-12T16:22:35Z",
       "distance_km": 15.59,
-      "moving_time_min": 84,
-      "pace_min_per_km": "5.41",
+      "moving_time_s": 5059,
+      "pace_sec_per_km": 325,
       "elevation_gain_m": 152.2
     },
     {
@@ -33,8 +33,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-10-10T14:47:47Z",
       "distance_km": 11.59,
-      "moving_time_min": 66,
-      "pace_min_per_km": "5.68",
+      "moving_time_s": 3952,
+      "pace_sec_per_km": 341,
       "elevation_gain_m": 87.4
     },
     {
@@ -42,8 +42,8 @@
       "name": "Intervall",
       "date": "2025-10-08T11:24:31Z",
       "distance_km": 10.64,
-      "moving_time_min": 44,
-      "pace_min_per_km": "4.14",
+      "moving_time_s": 2645,
+      "pace_sec_per_km": 249,
       "elevation_gain_m": 68.2
     },
     {
@@ -51,8 +51,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-10-05T15:29:21Z",
       "distance_km": 30.5,
-      "moving_time_min": 181,
-      "pace_min_per_km": "5.93",
+      "moving_time_s": 10850,
+      "pace_sec_per_km": 356,
       "elevation_gain_m": 739.7
     },
     {
@@ -60,8 +60,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-10-01T16:42:11Z",
       "distance_km": 15.07,
-      "moving_time_min": 76,
-      "pace_min_per_km": "5.03",
+      "moving_time_s": 4550,
+      "pace_sec_per_km": 302,
       "elevation_gain_m": 169
     },
     {
@@ -69,8 +69,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-09-28T13:23:50Z",
       "distance_km": 24.34,
-      "moving_time_min": 147,
-      "pace_min_per_km": "6.03",
+      "moving_time_s": 8807,
+      "pace_sec_per_km": 362,
       "elevation_gain_m": 612.5
     },
     {
@@ -78,8 +78,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-09-26T15:06:49Z",
       "distance_km": 2.89,
-      "moving_time_min": 15,
-      "pace_min_per_km": "5.05",
+      "moving_time_s": 875,
+      "pace_sec_per_km": 303,
       "elevation_gain_m": 16
     },
     {
@@ -87,8 +87,8 @@
       "name": "Mittagslauf",
       "date": "2025-09-26T12:54:47Z",
       "distance_km": 20.58,
-      "moving_time_min": 99,
-      "pace_min_per_km": "4.83",
+      "moving_time_s": 5964,
+      "pace_sec_per_km": 290,
       "elevation_gain_m": 470
     },
     {
@@ -96,8 +96,8 @@
       "name": "Vitaparcours",
       "date": "2025-09-23T18:46:31Z",
       "distance_km": 8.76,
-      "moving_time_min": 48,
-      "pace_min_per_km": "5.52",
+      "moving_time_s": 2898,
+      "pace_sec_per_km": 331,
       "elevation_gain_m": 65.8
     },
     {
@@ -105,8 +105,8 @@
       "name": "Vitaparcours",
       "date": "2025-09-18T18:49:57Z",
       "distance_km": 8.49,
-      "moving_time_min": 36,
-      "pace_min_per_km": "4.25",
+      "moving_time_s": 2165,
+      "pace_sec_per_km": 255,
       "elevation_gain_m": 61.9
     },
     {
@@ -114,8 +114,8 @@
       "name": "Vitaparcours",
       "date": "2025-09-16T19:14:00Z",
       "distance_km": 8.66,
-      "moving_time_min": 40,
-      "pace_min_per_km": "4.59",
+      "moving_time_s": 2384,
+      "pace_sec_per_km": 275,
       "elevation_gain_m": 62.9
     },
     {
@@ -123,8 +123,8 @@
       "name": "Mittagslauf",
       "date": "2025-09-13T12:49:51Z",
       "distance_km": 18.51,
-      "moving_time_min": 104,
-      "pace_min_per_km": "5.64",
+      "moving_time_s": 6259,
+      "pace_sec_per_km": 338,
       "elevation_gain_m": 190.1
     },
     {
@@ -132,8 +132,8 @@
       "name": "Mittagslauf",
       "date": "2025-09-11T12:13:09Z",
       "distance_km": 24.1,
-      "moving_time_min": 155,
-      "pace_min_per_km": "6.42",
+      "moving_time_s": 9280,
+      "pace_sec_per_km": 385,
       "elevation_gain_m": 616.6
     },
     {
@@ -141,8 +141,8 @@
       "name": "Vitaparcours",
       "date": "2025-08-30T18:28:23Z",
       "distance_km": 10.71,
-      "moving_time_min": 59,
-      "pace_min_per_km": "5.55",
+      "moving_time_s": 3568,
+      "pace_sec_per_km": 333,
       "elevation_gain_m": 93.9
     },
     {
@@ -150,8 +150,8 @@
       "name": "Lauf am Morgen",
       "date": "2025-08-28T08:48:32Z",
       "distance_km": 21.55,
-      "moving_time_min": 111,
-      "pace_min_per_km": "5.13",
+      "moving_time_s": 6634,
+      "pace_sec_per_km": 308,
       "elevation_gain_m": 129
     },
     {
@@ -159,8 +159,8 @@
       "name": "Lauf am Morgen",
       "date": "2025-08-26T07:48:18Z",
       "distance_km": 12.34,
-      "moving_time_min": 62,
-      "pace_min_per_km": "4.98",
+      "moving_time_s": 3691,
+      "pace_sec_per_km": 299,
       "elevation_gain_m": 141.5
     },
     {
@@ -168,8 +168,8 @@
       "name": "Lauf am Morgen",
       "date": "2025-08-24T07:43:05Z",
       "distance_km": 6.76,
-      "moving_time_min": 45,
-      "pace_min_per_km": "6.71",
+      "moving_time_s": 2722,
+      "pace_sec_per_km": 403,
       "elevation_gain_m": 425.9
     },
     {
@@ -177,8 +177,8 @@
       "name": "Lauf am Morgen",
       "date": "2025-08-23T10:24:33Z",
       "distance_km": 8.69,
-      "moving_time_min": 41,
-      "pace_min_per_km": "4.71",
+      "moving_time_s": 2452,
+      "pace_sec_per_km": 282,
       "elevation_gain_m": 141.4
     },
     {
@@ -186,8 +186,8 @@
       "name": "Abendlauf",
       "date": "2025-08-19T19:21:48Z",
       "distance_km": 18.03,
-      "moving_time_min": 93,
-      "pace_min_per_km": "5.15",
+      "moving_time_s": 5570,
+      "pace_sec_per_km": 309,
       "elevation_gain_m": 151
     },
     {
@@ -195,8 +195,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-08-15T13:39:57Z",
       "distance_km": 15.08,
-      "moving_time_min": 77,
-      "pace_min_per_km": "5.12",
+      "moving_time_s": 4635,
+      "pace_sec_per_km": 307,
       "elevation_gain_m": 157.1
     },
     {
@@ -204,8 +204,8 @@
       "name": "Abendlauf",
       "date": "2025-08-07T20:22:21Z",
       "distance_km": 6.14,
-      "moving_time_min": 25,
-      "pace_min_per_km": "4.15",
+      "moving_time_s": 1527,
+      "pace_sec_per_km": 249,
       "elevation_gain_m": 38.1
     },
     {
@@ -213,8 +213,8 @@
       "name": "Abendlauf",
       "date": "2025-08-05T19:53:18Z",
       "distance_km": 15.32,
-      "moving_time_min": 83,
-      "pace_min_per_km": "5.43",
+      "moving_time_s": 4995,
+      "pace_sec_per_km": 326,
       "elevation_gain_m": 143
     },
     {
@@ -222,8 +222,8 @@
       "name": "Lauf am Morgen",
       "date": "2025-08-01T10:06:48Z",
       "distance_km": 10.66,
-      "moving_time_min": 55,
-      "pace_min_per_km": "5.14",
+      "moving_time_s": 3284,
+      "pace_sec_per_km": 308,
       "elevation_gain_m": 72.4
     },
     {
@@ -231,8 +231,8 @@
       "name": "Mittagslauf",
       "date": "2025-07-26T12:56:08Z",
       "distance_km": 22.78,
-      "moving_time_min": 124,
-      "pace_min_per_km": "5.42",
+      "moving_time_s": 7414,
+      "pace_sec_per_km": 325,
       "elevation_gain_m": 252.4
     },
     {
@@ -240,8 +240,8 @@
       "name": "Vitaparcours / Uhr ging tot",
       "date": "2025-07-22T19:02:36Z",
       "distance_km": 3.41,
-      "moving_time_min": 19,
-      "pace_min_per_km": "5.57",
+      "moving_time_s": 1141,
+      "pace_sec_per_km": 334,
       "elevation_gain_m": 43.4
     },
     {
@@ -249,8 +249,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-07-20T16:03:45Z",
       "distance_km": 4.65,
-      "moving_time_min": 20,
-      "pace_min_per_km": "4.26",
+      "moving_time_s": 1189,
+      "pace_sec_per_km": 256,
       "elevation_gain_m": 26.7
     },
     {
@@ -258,8 +258,8 @@
       "name": "Lauf am Nachmittag",
       "date": "2025-07-20T14:35:12Z",
       "distance_km": 5.01,
-      "moving_time_min": 23,
-      "pace_min_per_km": "4.56",
+      "moving_time_s": 1371,
+      "pace_sec_per_km": 273,
       "elevation_gain_m": 75.9
     },
     {
@@ -267,8 +267,8 @@
       "name": "Intervall",
       "date": "2025-07-15T19:30:53Z",
       "distance_km": 10.59,
-      "moving_time_min": 47,
-      "pace_min_per_km": "4.45",
+      "moving_time_s": 2824,
+      "pace_sec_per_km": 267,
       "elevation_gain_m": 76.5
     },
     {
@@ -276,8 +276,8 @@
       "name": "Mittagslauf",
       "date": "2025-07-12T12:17:38Z",
       "distance_km": 15.02,
-      "moving_time_min": 79,
-      "pace_min_per_km": "5.28",
+      "moving_time_s": 4756,
+      "pace_sec_per_km": 317,
       "elevation_gain_m": 156.8
     }
   ]
