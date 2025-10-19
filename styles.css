@@ -1,32 +1,97 @@
-nav {
-  background: #222;
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
+/* ====== Base / Theme ====== */
+:root{
+  --bg: #0f172a;          /* slate-900 */
+  --panel: #111827;       /* gray-900 */
+  --card: #111827;
+  --muted: #94a3b8;       /* slate-400 */
+  --text: #e5e7eb;        /* gray-200 */
+  --brand: #60a5fa;       /* blue-400 */
+  --accent: #a78bfa;      /* violet-400 */
+  --ok: #34d399;          /* green-400 */
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 16px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body.sport-body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  background: linear-gradient(180deg, #0b1022, #0f172a 30%);
+  min-height:100vh;
 }
 
-nav a.active {
-  text-decoration: underline;
+/* ====== Header / Nav ====== */
+.site-header{
+  position: sticky; top:0; z-index: 50;
+  background: rgba(17,24,39,.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width: 1100px; margin: 0 auto; padding: 12px 20px;
+  display:flex; gap: 16px; align-items:center;
+}
+.nav-link{
+  color: var(--text); text-decoration:none; font-weight:600; opacity:.9;
+}
+.nav-link:hover{opacity:1;color:var(--brand)}
+.nav-link.active{color: var(--brand);}
+
+/* ====== Layout ====== */
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.hero h1{font-size: clamp(28px,4vw,40px); margin:0 0 8px}
+.hero p{color: var(--muted); margin:0 0 24px}
+
+.card{
+  background: rgba(17,24,39,.85);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 24px;
 }
 
-
-
-#myButton {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+/* ====== YTD Stats ====== */
+.ytd h2{margin:0 0 14px}
+.stats-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
 }
+.stat{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 12px;
+  padding:16px;
+}
+.stat-label{color: var(--muted); font-size: 12px; letter-spacing:.3px}
+.stat-value{font-size: 22px; font-weight:700; margin-top:6px}
 
-#myButton:hover {
-  background-color: #45a049;
+/* ====== Runs ====== */
+.section-head{display:flex; justify-content:space-between; align-items:end; gap:12px}
+.section-head small{color:var(--muted)}
+
+.runs-grid{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+  gap:14px;
+}
+.run{
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 12px;
+  padding:14px;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.run:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.12); }
+.run h3{margin:0 0 8px; font-size:16px}
+.run p{margin:0 0 6px; color: var(--muted)}
+.run p strong{color: var(--text)}
+
+/* ====== Footer ====== */
+.site-footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:16px 20px; text-align:center; color:var(--muted)
 }

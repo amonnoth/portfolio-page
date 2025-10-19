@@ -2,28 +2,71 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sport | Amon Noth</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">🏠 Startseite</a>
-      <a href="sport.html" class="active">🏃 Sport</a>
+<body class="sport-body">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-link">🏠 Startseite</a>
+      <a href="sport.html" class="nav-link active">🏃 Sport</a>
     </nav>
   </header>
 
-  <main>
-    <section id="strava-section">
-        <h1>Meine letzten Läufe</h1>
-        <div id="strava-container"><p>Daten werden geladen...</p></div>
+  <main class="container">
+    <section class="hero">
+      <h1>Sport & Läufe</h1>
+      <p>Jahresstatistik und die neuesten Runs – direkt aus Strava.</p>
+    </section>
+
+    <!-- YTD Summary -->
+    <section class="card ytd">
+      <h2>🗓️ Laufendes Jahr</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-label">Läufe</div>
+          <div class="stat-value" id="ytd-count">–</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Distanz</div>
+          <div class="stat-value" id="ytd-distance">–</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Gesamtdauer</div>
+          <div class="stat-value" id="ytd-time">–</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Ø-Pace</div>
+          <div class="stat-value" id="ytd-avg-pace">–</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Höhenmeter</div>
+          <div class="stat-value" id="ytd-elev">–</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Längster Lauf</div>
+          <div class="stat-value" id="ytd-longest">–</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Letzte Läufe -->
+    <section class="runs card">
+      <div class="section-head">
+        <h2>Meine letzten Läufe</h2>
+        <small id="updatedAt">Aktualisiert: –</small>
+      </div>
+      <div id="strava-container" class="runs-grid">
+        <p>Daten werden geladen...</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Amon Noth</p>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amon Noth</p>
   </footer>
+
   <script src="script.js" defer></script>
 </body>
 </html>
