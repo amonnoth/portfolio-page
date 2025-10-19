@@ -128,3 +128,30 @@ if (onSportPage()){
     bootSport();
   }
 }
+// ----- Navbar: active Link + mobile toggle + shadow on scroll -----
+function setActiveNav(){
+  const p = location.pathname;
+  document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+  if (p.endsWith('/sport.html') || p.endsWith('sport.html')) {
+    document.querySelector('[data-nav="sport"]')?.classList.add('active');
+  } else if (p.endsWith('/ausbildung.html') || p.endsWith('ausbildung.html')) {
+    document.querySelector('[data-nav="edu"]')?.classList.add('active');
+  } else {
+    document.querySelector('[data-nav="home"]')?.classList.add('active');
+  }
+}
+function initNav(){
+  setActiveNav();
+  const btn = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-links');
+  btn?.addEventListener('click', ()=> menu?.classList.toggle('open'));
+  window.addEventListener('scroll', ()=>{
+    if (window.scrollY > 6) document.body.classList.add('scrolled');
+    else document.body.classList.remove('scrolled');
+  });
+  // Jahr im Footer
+  const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initNav);
+} else { initNav(); }
