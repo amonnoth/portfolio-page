@@ -1,6 +1,24 @@
 {
-  "updatedAt": "2025-10-19T15:04:46.420Z",
+  "updatedAt": "2025-10-31T05:12:10.509Z",
   "runs": [
+    {
+      "id": 16296266061,
+      "name": "Abendlauf",
+      "date": "2025-10-29T19:13:09Z",
+      "distance_km": 15.32,
+      "moving_time_s": 5371,
+      "pace_sec_per_km": 351,
+      "elevation_gain_m": 177
+    },
+    {
+      "id": 16225119342,
+      "name": "Abendlauf",
+      "date": "2025-10-22T19:19:53Z",
+      "distance_km": 15.35,
+      "moving_time_s": 4877,
+      "pace_sec_per_km": 318,
+      "elevation_gain_m": 144.1
+    },
     {
       "id": 16167692110,
       "name": "Lauf am Morgen",
