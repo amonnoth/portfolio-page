@@ -134,9 +134,12 @@ function setActiveNav(){
   document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
   if (p.endsWith('/sport.html') || p.endsWith('sport.html')) {
     document.querySelector('[data-nav="sport"]')?.classList.add('active');
-  } else if (p.endsWith('/ausbildung.html') || p.endsWith('ausbildung.html')) {
+  } else if (p.endsWith('/erfahrung.html') || p.endsWith('erfahrung.html')) {
     document.querySelector('[data-nav="edu"]')?.classList.add('active');
-  } else {
+  } else if (p.endsWith('/me.html') || p.endsWith('me.html')) {
+    document.querySelector('[data-nav="me"]')?.classList.add('active');
+  }
+   else {
     document.querySelector('[data-nav="home"]')?.classList.add('active');
   }
 }
