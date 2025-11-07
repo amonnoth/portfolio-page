@@ -72,6 +72,11 @@ body{
 .grid-3{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
 .card.mini{ background: var(--card); border:1px solid rgba(255,255,255,.08) }
 
+section.card {
+  margin-bottom: 2rem; /* oder ein anderer Wert wie 1.5rem oder 30px */
+}
+
+
 /* ====== Hero ====== */
 .hero-grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center; }
 .hero h1{ font-size: clamp(28px,4vw,42px); margin:0 0 10px; }
