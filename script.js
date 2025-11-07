@@ -104,6 +104,51 @@ function renderList(runs){
   container.innerHTML = items || '<p>Keine Läufe gefunden.</p>';
 }
 
+// --- kleine Helfer ---
+function fmtTime(sec){
+  const h = Math.floor(sec/3600);
+  const m = Math.floor((sec%3600)/60);
+  const s = Math.floor(sec%60);
+  const pad = n => n.toString().padStart(2,'0');
+  return h ? `${pad(h)}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
+}
+function fmtPace(secPerKm){
+  const m = Math.floor(secPerKm/60);
+  const s = Math.floor(secPerKm%60);
+  return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')} min/km`;
+}
+function chDate(d){
+  return new Date(d).toLocaleDateString('de-CH', { day:'2-digit', month:'2-digit', year:'numeric' });
+}
+
+// --- hier wird gerendert ---
+function renderRuns(activities){
+  const el = document.getElementById('strava-container');
+  el.innerHTML = '';
+
+  activities.forEach(a => {
+    const km = (a.distance/1000);
+    const pace = a.moving_time / km; // sec per km
+
+    const card = document.createElement('article');
+    card.className = 'run-card card'; // 'card' => übernimmt deinen globalen Card-Look
+
+    card.innerHTML = `
+      <header>
+        <h3>${a.name || 'Lauf'}</h3>
+        <time datetime="${a.start_date_local || a.start_date}">${chDate(a.start_date_local || a.start_date)}</time>
+      </header>
+
+      <div class="dist">${km.toFixed(2)} km · <span class="muted">Pace ${fmtPace(pace)}</span></div>
+
+      <div class="row">▲ ${Math.round(a.total_elevation_gain ?? 0)} m · ⏱ ${fmtTime(a.moving_time)}</div>
+    `;
+
+    el.appendChild(card);
+  });
+}
+
+
 // ============================================
 // Boot
 // ============================================
@@ -157,3 +202,103 @@ function initNav(){
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initNav);
 } else { initNav(); }
+
+
+
+
+// ====== The Cat API Setup ======
+const CAT_API_URL =
+  'https://api.thecatapi.com/v1/images/search?limit=1'
+  + '&mime_types=jpg,png'   // nur statische Bilder (kein GIF)
+  + '&size=small'           // kleinere Dateien = schneller
+  + '&order=RANDOM';
+
+const CAT_API_KEY = 'HIER_DEIN_API_KEY'; // <-- einsetzen
+const catHeaders = CAT_API_KEY ? { 'x-api-key': CAT_API_KEY } : {};
+
+// ====== DOM-Refs ======
+const catImg      = document.getElementById('cat-img');
+const catNextBtn  = document.getElementById('cat-next');
+const catAutoplay = document.getElementById('cat-autoplay');
+const catCaption  = document.getElementById('cat-caption');
+
+// ====== Laden & Rendern ======
+async function fetchCatUrl() {
+  const res  = await fetch(CAT_API_URL, { headers: catHeaders });
+  if (!res.ok) throw new Error('Cat API antwortet nicht');
+  const data = await res.json();
+  const item = data?.[0];
+  return {
+    url: item?.url,
+    alt: (item?.breeds?.[0]?.name ? `Katze: ${item.breeds[0].name}` : 'Zufällige Katze')
+  };
+}
+
+let preloaded = null;
+async function preloadNext() {
+  try {
+    const { url, alt } = await fetchCatUrl();
+    await new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve();
+      img.onerror = reject;
+      img.referrerPolicy = 'no-referrer';
+      img.src = url;
+    });
+    preloaded = { url, alt };
+  } catch (e) {
+    console.error(e);
+    preloaded = null;
+  }
+}
+
+async function showNextCat() {
+  try {
+    // wenn vorab geladen, direkt anzeigen – sonst normal laden
+    if (preloaded) {
+      catImg.src = preloaded.url;
+      catImg.alt = preloaded.alt;
+      catCaption.textContent = preloaded.alt;
+      preloaded = null;
+      // gleich den nächsten vorladen
+      preloadNext();
+    } else {
+      const { url, alt } = await fetchCatUrl();
+      catImg.src = url;
+      catImg.alt = alt;
+      catCaption.textContent = alt;
+      preloadNext();
+    }
+  } catch (e) {
+    console.error('Fehler beim Laden des Katzenbilds:', e);
+    catCaption.textContent = 'Fehler beim Laden 😿 – bitte erneut versuchen.';
+  }
+}
+
+// ====== Autoplay (5 s) ======
+let timer = null;
+function startAuto() {
+  stopAuto();
+  timer = setInterval(showNextCat, 5000);
+}
+function stopAuto() {
+  if (timer) clearInterval(timer);
+  timer = null;
+}
+
+// Bedienung
+catNextBtn?.addEventListener('click', showNextCat);
+catAutoplay?.addEventListener('change', e => {
+  e.target.checked ? startAuto() : stopAuto();
+});
+
+// Seite/Tab nicht sichtbar → pausieren (spart Requests)
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopAuto();
+  else if (catAutoplay?.checked) startAuto();
+});
+
+// Initial
+showNextCat();   // erstes Bild
+startAuto();     // Autoplay an
+
