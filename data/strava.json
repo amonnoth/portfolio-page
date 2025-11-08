@@ -1,6 +1,15 @@
 {
-  "updatedAt": "2025-11-07T05:11:47.300Z",
+  "updatedAt": "2025-11-08T05:10:27.163Z",
   "runs": [
+    {
+      "id": 16384631637,
+      "name": "Ändlech… 🤩",
+      "date": "2025-11-07T15:35:57Z",
+      "distance_km": 10.05,
+      "moving_time_s": 2358,
+      "pace_sec_per_km": 235,
+      "elevation_gain_m": 39
+    },
     {
       "id": 16367332134,
       "name": "Abendlauf",
