@@ -1,6 +1,15 @@
 {
-  "updatedAt": "2025-11-19T05:12:06.253Z",
+  "updatedAt": "2025-11-20T05:11:45.280Z",
   "runs": [
+    {
+      "id": 16504373993,
+      "name": "Mittagslauf",
+      "date": "2025-11-19T12:16:16Z",
+      "distance_km": 15.03,
+      "moving_time_s": 4568,
+      "pace_sec_per_km": 304,
+      "elevation_gain_m": 159
+    },
     {
       "id": 16448307836,
       "name": "Abendlauf",
