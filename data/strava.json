@@ -1,6 +1,15 @@
 {
-  "updatedAt": "2026-02-01T05:53:39.298Z",
+  "updatedAt": "2026-02-02T05:56:48.887Z",
   "runs": [
+    {
+      "id": 17247182228,
+      "name": "Lauf am Morgen",
+      "date": "2026-02-01T09:30:45Z",
+      "distance_km": 10.6,
+      "moving_time_s": 3405,
+      "pace_sec_per_km": 321,
+      "elevation_gain_m": 70.4
+    },
     {
       "id": 17203758382,
       "name": "Mittagslauf",
